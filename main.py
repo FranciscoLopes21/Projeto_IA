@@ -2,7 +2,9 @@ from Cidade import Cidade
 from Mapa import Mapa
 from basePortugal import *
 import os
-# limpar ecra
+
+from Custo_Uniforme import *
+
 Portugal = iniciarBasePortugal()
 
 def validarEscolha(escolha):
@@ -30,11 +32,12 @@ def validarEscolha(escolha):
             if (escolha == "1"):
                 print ("chamar algoritmo ppp - procura(cidade1, cidade2)")
             elif (escolha == "2"):
-                print ("chamar algoritmo custo uniforme")
+                custoUniforme(Portugal, cidade1, cidade2)
+                input()
             elif (escolha == "3"):
                 print ("chamar algoritmo procura sofrega")
             elif (escolha == "4"):
-                print ("chamar algoritmo a*")
+                print ("chamar algoritmo A*")
             else:
                 print ("Escolha um algoritmo existente")
     
