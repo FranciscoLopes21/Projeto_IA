@@ -10,22 +10,6 @@ def encontrarMenorNo (cidadesParaExpandir):
             cidade = candidato
 
     return cidade
-    
-
-def adicionarVizinhos (cidade, no):
-    arrayNovosVizinhos = []
-    distancia = no['distancia']
-    historicoCaminho = no['historicoCaminho']
-
-    for vizinho in cidade.vizinhos:
-        arrayNovosVizinhos.append({
-                'cidade': vizinho,
-                'distancia': cidade.vizinhos[vizinho]['distancia'] + distancia,
-                'historicoCaminho': historicoCaminho + [vizinho]
-            }
-        )
-    
-    return arrayNovosVizinhos
 
 def custoUniforme (mapa, inicio, destino):
 
@@ -47,7 +31,14 @@ def custoUniforme (mapa, inicio, destino):
             break
 
         # adicionar os vizinhos do no que foi expandido
-        cidadesParaExpandir += adicionarVizinhos(mapa.obterCidade(proximoNoExpandir['cidade']), proximoNoExpandir)
+        cidade = mapa.obterCidade(proximoNoExpandir['cidade'])
+        for vizinho in cidade.vizinhos:
+            cidadesParaExpandir.append({
+                    'cidade': vizinho,
+                    'distancia': cidade.vizinhos[vizinho]['distancia'] + proximoNoExpandir['distancia'],
+                    'historicoCaminho': proximoNoExpandir['historicoCaminho'] + [vizinho]
+                }
+            )
 
         # remover o no que foi totalmente expandido
         cidadesParaExpandir.remove(proximoNoExpandir)
