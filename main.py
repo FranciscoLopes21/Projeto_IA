@@ -33,15 +33,14 @@ def validarEscolha(escolha):
                 print ("chamar algoritmo ppp - procura(cidade1, cidade2)")
             elif (escolha == "2"):
                 custoUniforme(Portugal, cidade1, cidade2)
-                input()
             elif (escolha == "3"):
                 print ("chamar algoritmo procura sofrega")
             elif (escolha == "4"):
                 print ("chamar algoritmo A*")
             else:
                 print ("Escolha um algoritmo existente")
-    
-    
+
+    input()
 
 while True:
     os.system('cls||clear')
