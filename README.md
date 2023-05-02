@@ -1,5 +1,1 @@
 # Projeto_IA
-
-
-
-ola
