@@ -1,38 +1,37 @@
 # abre sempre o no com menor custo da lista
 
-def encontrarMenorKM (cidadesParaExpandir):
-    distancia = cidadesParaExpandir[0]['faro']
+def encontrarMenorNo (cidadesParaExpandir):
+    distancia = cidadesParaExpandir[0]['distancia']
     cidade = cidadesParaExpandir[0]
 
     for candidato in cidadesParaExpandir:
-        if (candidato['faro'] < distancia):
-            distancia = candidato['faro']
+        if (candidato['distancia'] + candidato['faro']  < distancia):
+            distancia = candidato['distancia'] + candidato['faro']
             cidade = candidato
 
     return cidade
 
-def procuraSofrega (mapa, inicio, destino):
+def amais (mapa, inicio, destino):
 
     cidadesParaExpandir = []
 
     # adicionamos o ponto de partida
     cidadesParaExpandir.append (
-        {'cidade': inicio.nomeCidade, 'historicoCaminho': [inicio.nomeCidade],'distancia': 0, 'faro' : inicio.distanciaParaFaro}
+       {'cidade': inicio.nomeCidade, 'historicoCaminho': [inicio.nomeCidade],'distancia': 0, 'faro' : inicio.distanciaParaFaro}
     )
 
     while True:
 
         # encontrar o proximo no a expandir
-        proximoNoExpandir = encontrarMenorKM(cidadesParaExpandir)
+        proximoNoExpandir = encontrarMenorNo(cidadesParaExpandir)
         
         # verificar se e o destino
         if (proximoNoExpandir['cidade'] == destino.nomeCidade):
             print(proximoNoExpandir['historicoCaminho'])
-            print(proximoNoExpandir['distancia'], "kms")
+            print(proximoNoExpandir['distancia'])
             break
 
         # adicionar os vizinhos do no que foi expandido
-        # distancia entre as cidades
         cidade = mapa.obterCidade(proximoNoExpandir['cidade'])
         for vizinho in cidade.vizinhos:
             cidadesParaExpandir.append({
