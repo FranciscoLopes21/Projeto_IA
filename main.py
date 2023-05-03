@@ -4,6 +4,7 @@ from basePortugal import *
 import os
 
 from Custo_Uniforme import *
+from Procura_Sofrega import *
 
 Portugal = iniciarBasePortugal()
 
@@ -34,7 +35,7 @@ def validarEscolha(escolha):
             elif (escolha == "2"):
                 custoUniforme(Portugal, cidade1, cidade2)
             elif (escolha == "3"):
-                print ("chamar algoritmo procura sofrega")
+                procuraSofrega(Portugal, cidade1, cidade2)
             elif (escolha == "4"):
                 print ("chamar algoritmo A*")
             else:
