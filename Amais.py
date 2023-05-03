@@ -1,7 +1,8 @@
 # abre sempre o no com menor custo da lista
 
 def encontrarMenorNo (cidadesParaExpandir):
-    distancia = cidadesParaExpandir[0]['distancia'] + cidadesParaExpandir[0]['faro']
+    # VERIFICAR ESTE DISTANCIA AUXILIAR
+    distancia = cidadesParaExpandir[0]['distancia']
     cidade = cidadesParaExpandir[0]
 
     for candidato in cidadesParaExpandir:
