@@ -22,9 +22,12 @@ def procuraSofrega (mapa, inicio, destino):
 
     try:
         i = 0
-        while True and i <= 75:
+        while True:
             
             i += 1
+            if i > 75:
+                print("Número máximo de tentativas excedido")
+                break
 
             # encontrar o proximo no a expandir
             proximoNoExpandir = encontrarMenorKM(cidadesParaExpandir)
