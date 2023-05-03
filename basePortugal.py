@@ -18,7 +18,7 @@ def iniciarBasePortugal():
     Leiria = Cidade('Leiria', 278)
     Lisboa = Cidade('Lisboa', 195)
     Porto = Cidade('Porto', 418)
-    VilaReal = Cidade('VilaReal', 429)
+    VilaReal = Cidade('Vila Real', 429)
     Viseu = Cidade('Viseu', 363)
     VianaDoCastelo = Cidade('Viana Do Castelo', 473)
     Santarem = Cidade('Santarem', 231)

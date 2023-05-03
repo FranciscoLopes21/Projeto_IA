@@ -56,4 +56,4 @@ while True:
     
     validarEscolha(escolha)
     
-
+    # acresentar opcao de sair
