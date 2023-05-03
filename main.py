@@ -38,7 +38,7 @@ def validarEscolha(escolha):
             elif (escolha == "3"):
                 procuraSofrega(Portugal, cidade1, cidade2)
             elif (escolha == "4"):
-                amais(Portugal, cidade1, cidade2)
+                aMais(Portugal, cidade1, cidade2)
             else:
                 print ("Escolha um algoritmo existente")
 

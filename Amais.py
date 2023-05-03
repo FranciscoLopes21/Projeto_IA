@@ -2,7 +2,7 @@
 
 def encontrarMenorNo (cidadesParaExpandir):
     # VERIFICAR ESTE DISTANCIA AUXILIAR
-    distancia = cidadesParaExpandir[0]['distancia']
+    distancia = cidadesParaExpandir[0]['distancia'] + cidadesParaExpandir[0]['faro']
     cidade = cidadesParaExpandir[0]
 
     for candidato in cidadesParaExpandir:
@@ -12,7 +12,7 @@ def encontrarMenorNo (cidadesParaExpandir):
 
     return cidade
 
-def amais (mapa, inicio, destino):
+def aMais (mapa, inicio, destino):
 
     cidadesParaExpandir = []
 
