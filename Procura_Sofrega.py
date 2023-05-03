@@ -21,8 +21,10 @@ def procuraSofrega (mapa, inicio, destino):
     )
 
     try:
-
-        while True:
+        i = 0
+        while True and i <= 75:
+            
+            i += 1
 
             # encontrar o proximo no a expandir
             proximoNoExpandir = encontrarMenorKM(cidadesParaExpandir)
