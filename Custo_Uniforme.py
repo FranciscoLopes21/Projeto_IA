@@ -28,7 +28,7 @@ def custoUniforme (mapa, inicio, destino):
         # verificar se e o destino
         if (proximoNoExpandir['cidade'] == destino.nomeCidade):
             print(proximoNoExpandir['historicoCaminho'])
-            print(proximoNoExpandir['distancia'])
+            print(proximoNoExpandir['distancia'], "km")
             break
 
         # adicionar os vizinhos do no que foi expandido

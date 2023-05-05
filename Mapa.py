@@ -11,11 +11,6 @@ class Mapa:
                 return cidadeDaLista
         
         return None
-        
-    def adicionarCidade (self, Cidade):
-        if Cidade not in self.listaCidades: 
-            self.listaCidades.append(Cidade)
-            print("adicionado!")
                 
     def mostrarCidades (self):
         for cidadeDaLista in self.listaCidades:

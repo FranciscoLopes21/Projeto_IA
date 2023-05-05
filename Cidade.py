@@ -15,5 +15,3 @@ class Cidade:
         
     def mostrarVizinhos(self):
         print(self.vizinhos)
-
-    # falta funcao get_distance
