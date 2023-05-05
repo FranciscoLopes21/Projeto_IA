@@ -1,6 +1,5 @@
 def profundidadePrimeiro(mapa, inicio, destino):
     cidadesParaExpandir = []
-    cidadesJaVisitadas = []
 
     # adicionamos o ponto de partida a pilha
     cidadesParaExpandir.append (
@@ -34,4 +33,4 @@ def profundidadePrimeiro(mapa, inicio, destino):
         numeroIteracoes += 1
         
     
-    print("crashhhhhh")
+    print("Limite de iteracoes atingido")
