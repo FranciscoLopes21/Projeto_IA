@@ -3,6 +3,7 @@ from Mapa import Mapa
 from basePortugal import *
 import os
 
+from Profundidade_primeiro import *
 from Custo_Uniforme import *
 from Procura_Sofrega import *
 from Amais import *
@@ -32,7 +33,7 @@ def validarEscolha(escolha):
             print ("Cidade final nao e valida")
         else:
             if (escolha == "1"):
-                print ("chamar algoritmo ppp - procura(cidade1, cidade2)")
+                profundidadePrimeiro (Portugal,cidade1, cidade2)
             elif (escolha == "2"):
                 custoUniforme(Portugal, cidade1, cidade2)
             elif (escolha == "3"):

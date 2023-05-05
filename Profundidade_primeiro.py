@@ -1,26 +1,47 @@
-import Mapa as mapa
+# abre sempre o no com menor custo da lista
 
-def profundidadePrimeiro(mapa, inicio, destino,visitado=None,caminho=None):
-    if visitado is None:
-        visitado = set()
-    if caminho is None:
-        caminho= []
-    visitado.add(inicio)
-    caminho=caminho + [inicio]
-    if inicio == destino:
-        return caminho
-    print('caminho:',caminho)
-    for vizinho in mapa[inicio]:
-        if vizinho not in visitado:
-            novo_caminho = profundidadePrimeiro(mapa,vizinho,destino,visitado,caminho)
-            if novo_caminho:
-                return novo_caminho
-    return []
+def encontrarPrimeiro (cidadesParaExpandir):
+    distancia = cidadesParaExpandir[0]['distancia']
+    cidade = cidadesParaExpandir[0]
 
- #teste
-inicio = 'Porto'
-destino = 'Castelo Branco'
-caminho = profundidadePrimeiro(mapa, inicio, destino)
-print('Caminho encontrado:', caminho)
-             
+    for candidato in cidadesParaExpandir:
+        if (candidato['distancia'] < distancia):
+            distancia = candidato['distancia']
+            cidade = candidato
+
+    return cidade
+
+def profundidadePrimeiro (mapa, inicio, destino):
+
+    cidadesParaExpandir = []
+
+    # adicionamos o ponto de partida
+    cidadesParaExpandir.append (
+        {'cidade': inicio.nomeCidade, 'distancia': 0, 'historicoCaminho': [inicio.nomeCidade]}
+    )
+
+    while True:
+
+        # encontrar o proximo no a expandir
+        proximoNoExpandir = encontrarPrimeiro(cidadesParaExpandir)
+        
+        # verificar se e o destino
+        if (proximoNoExpandir['cidade'] == destino.nomeCidade):
+            print(proximoNoExpandir['historicoCaminho'])
+            print(proximoNoExpandir['distancia'])
+            break
+
+        # adicionar os vizinhos do no que foi expandido
+        cidade = mapa.obterCidade(proximoNoExpandir['cidade'])
+        for vizinho in cidade.vizinhos:
+            sorted(cidadesParaExpandir['cidade'])
+            cidadesParaExpandir.append({
+                    'cidade': vizinho,
+                    'distancia': cidade.vizinhos[vizinho]['distancia'] + proximoNoExpandir['distancia'],
+                    'historicoCaminho': proximoNoExpandir['historicoCaminho'] + [vizinho]
+                }
+            )
+
+        # remover o no que foi totalmente expandido
+        cidadesParaExpandir.remove(proximoNoExpandir)
 
